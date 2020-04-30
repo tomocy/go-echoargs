@@ -1,12 +1,10 @@
 package echoargs
 
-func NewArgs(first string, rest ...string) Args {
-	vals := make([]string, 1+len(rest))
-	vals[0] = first
-	for i := 1; i < len(vals); i++ {
-		vals[i] = rest[i]
-	}
+type Echoer interface {
+	Echo(Args) error
+}
 
+func NewArgs(vals ...string) Args {
 	return Args{
 		vals: vals,
 	}
