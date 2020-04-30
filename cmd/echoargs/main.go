@@ -3,6 +3,9 @@ package main
 import (
 	"fmt"
 	"os"
+
+	"github.com/tomocy/go-echoargs"
+	"github.com/tomocy/go-echoargs/infra"
 )
 
 func main() {
@@ -21,3 +24,10 @@ type echoer string
 const (
 	echoerConsole = "console"
 )
+
+func decideEchoer(v string) echoargs.Echoer {
+	switch v {
+	default:
+		return new(infra.Console)
+	}
+}
