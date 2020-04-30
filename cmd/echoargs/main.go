@@ -17,3 +17,7 @@ func run(args []string) error {
 }
 
 type echoer string
+
+const (
+	echoerConsole = "console"
+)
