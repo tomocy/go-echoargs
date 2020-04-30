@@ -15,3 +15,5 @@ func main() {
 func run(args []string) error {
 	return fmt.Errorf("not implemented")
 }
+
+type echoer string
